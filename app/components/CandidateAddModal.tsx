@@ -182,44 +182,32 @@ export default function CandidateAddModal({
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex flex-col md:flex-row divide-x-2 divide-gray-200">
-              <div className="p-4 md:pr-6 md:pl-0 flex-shrink-0">
-                <label className="block text-sm font-medium text-gray-700">
-                  Frontend Interview *
-                </label>
-                <Calendar24
-                  date={frontendDate}
-                  setDate={setFrontendDate}
-                  time={frontendTime}
-                  setTime={setFrontendTime}
-                />
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4">
+            <div className="p-6 border rounded-lg">
+              <h3 className="text-lg mb-4 flex items-center">
+                Frontend Interview *
+              </h3>
 
-              <div className="p-4 md:px-6 flex-shrink-0">
-                <label className="block text-sm font-medium text-gray-700">
-                  Backend Interview *
-                </label>
-                <Calendar24
-                  date={backendDate}
-                  setDate={setBackendDate}
-                  time={backendTime}
-                  setTime={setBackendTime}
-                />
-              </div>
-
-              <div className="p-4 md:pl-6 flex-shrink-0">
-                <label className="block text-sm font-medium text-gray-700">
-                  Interview Status *
-                </label>
-                <DropdownMenuRadioGroupDemo
-                  value={formData.interview_status ?? "Pending"}
-                  onChange={(val) => handleInputChange("interview_status", val)}
-                />
-              </div>
+              <Calendar24
+                date={frontendDate}
+                setDate={setFrontendDate}
+                time={frontendTime}
+                setTime={setFrontendTime}
+              />
             </div>
 
-            <div className="hidden md:block"></div>
+            <div className=" border rounded-lg p-6">
+              <h3 className="text-lg mb-4 flex items-center">
+                Backend Interview *
+              </h3>
+
+              <Calendar24
+                date={backendDate}
+                setDate={setBackendDate}
+                time={backendTime}
+                setTime={setBackendTime}
+              />
+            </div>
           </div>
           <div>
             <label>Meeting Link</label>
@@ -258,3 +246,4 @@ export default function CandidateAddModal({
     </div>
   );
 }
+
