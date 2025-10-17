@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model candidate_interviews {
+  user_id                    String    @id @default(uuid()) @db.Uuid
+  candidate_name             String?   @db.VarChar(100)
+  mobile_number              String?   @db.VarChar(15)
+  frontend_interview_date    DateTime? @db.Date
+  frontend_time_slot         String?   @db.VarChar(50)
+  backend_interview_date     DateTime? @db.Date
+  backend_time_slot          String?   @db.VarChar(50)
+  candidate_email            String?   @db.VarChar(150)
+  candidate_resume_link      String?
+  meeting_link               String?
+  interview_duration         String?   @db.VarChar(20)
+  interview_status           String?   @db.VarChar(50)
+  company                  String?   @db.VarChar(100)
+
+  fr_self_introduction          String?
+  fr_self_introduction_rating   Decimal?  @db.Decimal(3, 1)
+  fr_project_explanation        String?
+  fr_project_explanation_rating Decimal?  @db.Decimal(3, 1)
+  fr_communication              String?
+  fr_communication_rating       Decimal?  @db.Decimal(3, 1)
+  fr_meeting_recording          String?
+  frontend_feedback          String?
+
+
+
+  be_self_introduction          String?
+  be_self_introduction_rating   Decimal?  @db.Decimal(3, 1)
+  be_project_explanation        String?
+  be_project_explanation_rating Decimal?  @db.Decimal(3, 1)
+  be_communication              String?
+  be_communication_rating       Decimal?  @db.Decimal(3, 1)
+  be_meeting_recording          String?
+  backend_feedback           String?
+
+  communication              String?
+  
+
+  html_css_theory            String?
+  html_coding_easy           String?
+  html_coding_medium         String?
+  html_coding_hard           String?
+  html_coding_overall_rating Decimal?  @db.Decimal(3, 1)
+
+  javascript_theory          String?
+  javascript_coding_easy     String?
+  javascript_coding_medium   String?
+  javascript_coding_hard     String?
+  javascript_overall_rating  Decimal?  @db.Decimal(3, 1)
+
+  react_theory               String?
+  react_coding_easy          String?
+  react_coding_medium        String?
+  react_coding_hard          String?
+  react_overall_rating       Decimal?  @db.Decimal(3, 1)
+
+  python_theory              String?
+  python_coding_easy         String?
+  python_coding_medium       String?
+  python_coding_hard         String?
+  python_overall_rating      Decimal?  @db.Decimal(3, 1)
+
+  node_theory                String?
+  node_coding_easy           String?
+  node_coding_medium         String?
+  node_coding_hard           String?
+  node_overall_rating        Decimal?  @db.Decimal(3, 1)
+
+  sql_theory                 String?
+  sql_coding_easy            String?
+  sql_coding_medium          String?
+  sql_coding_hard            String?
+  sql_overall_rating         Decimal?  @db.Decimal(3, 1)
+
+  strongest_skill            String?
+  placement_status           String?   @db.VarChar(50)
+  
+
+  @@map("candidate_interviews")
+}
