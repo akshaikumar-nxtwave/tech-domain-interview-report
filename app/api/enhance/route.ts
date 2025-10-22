@@ -100,8 +100,9 @@ export async function POST(req: Request) {
     const enhanced = response.data?.choices?.[0]?.message?.content || "No response received.";
     return NextResponse.json({ enhanced });
 
-  } catch (error: any) {
-    console.error("Mistral API Error:", error.response?.data || error.message);
+  } catch (error) {
+    console.error("Mistral API Error:", error || error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
+
