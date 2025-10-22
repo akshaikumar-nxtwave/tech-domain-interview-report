@@ -7,9 +7,9 @@ export default function Navbar() {
 
   const getButtonClasses = (modal: "candidate" | "frontend" | "backend") => {
     const baseClasses =
-      "transition-all duration-100 ease-in-out font-medium px-4 py-2 rounded-sm";
-    const activeClasses = "opacity-100";
-    const inactiveClasses = "opacity-70 hover:opacity-100";
+      "transition-all duration-100 ease-in-out font-medium px-4 py-2 rounded-lg";
+    const activeClasses = "";
+    const inactiveClasses = "";
 
     let colorClasses = "";
 
@@ -18,19 +18,19 @@ export default function Navbar() {
         colorClasses =
           currentModal === "candidate"
             ? "bg-white"
-            : "bg-none";
+            : "transition-all duration-300 ease-in-out font-semibold text-sm px-4 py-2.5 flex items-center justify-center gap-2 rounded-lg cursor-pointer flex-1 whitespace-nowrap text-gray-300 bg-gray-800/80 hover:bg-gray-700/80 hover:text-white";
         break;
       case "frontend":
         colorClasses =
           currentModal === "frontend"
             ? "bg-white"
-            : "bg-none";
+            : "transition-all duration-300 ease-in-out font-semibold text-sm px-4 py-2.5 flex items-center justify-center gap-2 rounded-lg cursor-pointer flex-1 whitespace-nowrap text-gray-300 bg-gray-800/80 hover:bg-gray-700/80 hover:text-white";
         break;
       case "backend":
         colorClasses =
           currentModal === "backend"
             ? "bg-white"
-            : "bg-none";
+            : "transition-all duration-300 ease-in-out font-semibold text-sm px-4 py-2.5 flex items-center justify-center gap-2 rounded-lg cursor-pointer flex-1 whitespace-nowrap text-gray-300 bg-gray-800/80 hover:bg-gray-700/80 hover:text-white";
         break;
     }
 
@@ -40,12 +40,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className=" flex gap-4 items-center bg-zinc-400/25 p-1 rounded">
+    <nav className=" flex gap-4 items-center bg-zinc-900 p-2 rounded-xl">
       <button
         onClick={() => openModal("candidate")}
         className={`${getButtonClasses("candidate")} cursor-pointer`}
       >
-        Candidate Overview
+        Candidate Edit
       </button>
 
       <button
