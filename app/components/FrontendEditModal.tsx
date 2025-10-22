@@ -111,7 +111,7 @@ export default function FrontendEditModal({
       });
 
       const data = resp.data;
-      handleInputChange("frontend_feedback", data.refined);
+      handleInputChange("frontend_feedback", data.enhanced);
     } catch (e) {
       console.error(e);
       setError("Something went wrong");
@@ -369,3 +369,4 @@ export default function FrontendEditModal({
     </Modal>
   );
 }
+
