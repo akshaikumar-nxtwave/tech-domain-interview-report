@@ -5,7 +5,6 @@ import { CircleX } from "lucide-react";
 import { Candidate } from "../types/candidate";
 import axios from "axios";
 import Calendar24 from "../../components/DateAndTime";
-import DropdownMenuRadioGroupDemo from "../../components/Dropdown";
 import PlacedDropDown from "../../components/PlacedDropDown";
 
 interface CandidateAddModalProps {
@@ -246,4 +245,5 @@ export default function CandidateAddModal({
     </div>
   );
 }
+
 
