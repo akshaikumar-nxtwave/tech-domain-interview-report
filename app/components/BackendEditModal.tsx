@@ -115,7 +115,7 @@ export default function BackendEditModal({
       });
 
       const data = resp.data;
-      handleInputChange("backend_feedback", data.refined);
+      handleInputChange("backend_feedback", data.enhanced);
     } catch (e) {
       console.error(e);
       
@@ -371,3 +371,4 @@ export default function BackendEditModal({
     </Modal>
   );
 }
+
